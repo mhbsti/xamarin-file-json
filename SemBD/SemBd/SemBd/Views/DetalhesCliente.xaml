@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SemBd.Views.DetalhesCliente"
+             Title="{Binding Title}">
+
+    <StackLayout Padding="0" Orientation="Vertical" VerticalOptions="StartAndExpand">
+        
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="0" Orientation="Horizontal" Padding="10" Spacing="5">
+            <Label Text="Código: " FontSize="Medium" TextColor="Black" ></Label>
+            <Label Text="{Binding Codigo}" FontSize="Medium" TextColor="Black" ></Label>
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="0" Orientation="Horizontal" Padding="10" Spacing="5">
+            <Label Text="Nome: " FontSize="Medium" TextColor="Black" ></Label>
+            <Label Text="{Binding Title}" FontSize="Medium" TextColor="Black" ></Label>
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="0" Orientation="Horizontal" Padding="10" Spacing="5">
+            <Label Text="Endereço: " FontSize="Medium" TextColor="Black" ></Label>
+            <Label Text="{Binding Endereco}" FontSize="Medium" TextColor="Black" ></Label>
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="0" Orientation="Horizontal" Padding="10" Spacing="5">
+            <Label Text="Site: " FontSize="Medium" TextColor="Black" ></Label>
+            <Label Text="{Binding Site}" FontSize="Medium" TextColor="Black" ></Label>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

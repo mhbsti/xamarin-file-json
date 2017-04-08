@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SemBd.Views.MainPage"
+             xmlns:c="clr-namespace:SemBd.Converters;assembly=SemBd"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             Title="{Binding Title}">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView ItemsSource="{Binding Clientes}">
+        <ListView.Behaviors>
+            <b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding ClienteSelectCommand}"
+                                      EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" 
+                                Padding="10" Spacing="10">
+                        <Image Source="ic_shopping_cart_black_24dp.png" HorizontalOptions="Start" />
+                        <Label Text="{Binding Nome}" HorizontalOptions="FillAndExpand" />
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
