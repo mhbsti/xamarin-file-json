@@ -36,6 +36,9 @@ namespace SemBd.ViewModels
             var content = DependencyService.Get<ISaveAndLoad>().LoadText("clientes.json");
             // Convertendo nosso json para uma lista de objetos
             Clientes = JsonConvert.DeserializeObject<List<Cliente>>(content);
+
+
+
             _navigationService = navigationService;
             this.ClienteSelectCommand = new DelegateCommand<Cliente>((cliente) =>
             {
